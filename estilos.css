@@ -1,1 +1,99 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
 
+nav {
+  background-color: #333;
+}
+
+.menu-principal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-principal li {
+  position: relative;
+}
+
+.menu-principal a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-principal a:hover {
+  background-color: #444;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #555;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  color: white;
+}
+
+.submenu li a:hover {
+  background-color: #666;
+}
+
+.submenu-padre:hover .submenu {
+  display: block;
+}
+
+.cuadros-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tarjeta {
+  background: #f0f0f1;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 250px;
+}
+
+.tarjeta img {
+  width: 100%;
+  display: block;
+}
+
+
+@media (max-width: 640px) {
+  .contenedor-tarjetas {
+    flex-direction: column;
+  }
+  .tarjeta {
+    flex: 1 1 100%;
+  }
+}
+
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .tarjeta:nth-child(3) {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tarjeta {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+}
